@@ -24,7 +24,7 @@ export class AuthService {
     return this.afAuth.authState;
   }
 
-  login( email: string, password: string) {
+  login(email: string, password: string) {
     this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .catch(error => {
         this.eventAuthError.next(error);
@@ -38,7 +38,7 @@ export class AuthService {
 
   createUser(user) {
     console.log(user);
-    this.afAuth.auth.createUserWithEmailAndPassword( user.email, user.password)
+    this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password)
       .then( userCredential => {
         this.newUser = user;
         console.log(userCredential);
@@ -69,5 +69,4 @@ export class AuthService {
   logout() {
     return this.afAuth.auth.signOut();
   }
-
 }

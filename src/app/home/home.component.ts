@@ -12,14 +12,19 @@ export class HomeComponent implements OnInit {
 
   user: firebase.User;
 
-  constructor(private auth: AuthService, 
+  constructor(
+    private auth: AuthService, 
     private router: Router) { }
 
   ngOnInit() {
     this.auth.getUserState()
-      .subscribe( user => {
-        this.user = user;
+      .subscribe(usr => {
+        this.user = usr;
       })
+  }
+
+  register() {
+    this.router.navigate(['/register']);
   }
 
   login() {
@@ -29,9 +34,4 @@ export class HomeComponent implements OnInit {
   logout() {
     this.auth.logout();
   }
-
-  register() {
-    this.router.navigate(['/register']);
-  }
-
 }
