@@ -7,6 +7,7 @@ import { AuthService } from 'src/app/auth/auth.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
+
 export class RegisterComponent implements OnInit {
 
   authError: any;
@@ -14,7 +15,7 @@ export class RegisterComponent implements OnInit {
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
-    this.auth.eventAuthError$.subscribe( data => {
+    this.auth.eventAuthError$.subscribe(data => {
       this.authError = data;
     })
   }
@@ -22,5 +23,4 @@ export class RegisterComponent implements OnInit {
   createUser(frm) {
     this.auth.createUser(frm.value);
   }
-
 }
