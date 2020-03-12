@@ -14,13 +14,15 @@ import { environment } from 'src/environments/environment';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { RecoverPasswordComponent } from './auth/recover-password/recover-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RecoverPasswordComponent
   ],
   imports: [
     BrowserModule,

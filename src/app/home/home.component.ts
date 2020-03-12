@@ -34,4 +34,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/register']);
   }
 
+  recoverPassword(){
+    this.router.navigate(['/recover-password']);
+  }
+
 }
